@@ -17,7 +17,6 @@ namespace SOG.CVDFilter
         public VisionTypeInfo SelectedVisionType { get; private set; }
 
         const string soFileName = "CVDProfiles";
-        const string soSearchTerm = "t:ScriptableObject " + soFileName;
 
         void Reset()
         {
@@ -41,7 +40,7 @@ namespace SOG.CVDFilter
         void AssignProfileSO()
         {
 #if UNITY_EDITOR
-            string[] guid = AssetDatabase.FindAssets(soSearchTerm);
+            string[] guid = AssetDatabase.FindAssets(soFileName);
             if (guid.Length < 1)
             {
                 Debug.LogErrorFormat("[{0}] ({1}): Error - Unable to locate file \"{2}\". "
