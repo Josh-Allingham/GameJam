@@ -1,9 +1,7 @@
 using UnityEngine;
 
-public class Dish : MonoBehaviour
+public class Table : MonoBehaviour
 {
-    public int tableIndex;
-
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
