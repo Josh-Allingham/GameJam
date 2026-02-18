@@ -4,7 +4,6 @@ public class PlayerWobble : MonoBehaviour
 {
     [Header("Main")]
     [SerializeField] private bool hasFallen;
-    [SerializeField] private GameObject balancePointer;
     private Vector2 minMaxRotInDegrees = new Vector2(-45f, 45f);
     
 
@@ -32,10 +31,9 @@ public class PlayerWobble : MonoBehaviour
 
             float angleX = Mathf.Sin(noiseX * 2 * Mathf.PI);
             float angleZ = Mathf.Sin(noiseZ * 2 * Mathf.PI);
-            balancePointer.transform.Rotate(transform.forward, angleX);
             //Debug.Log($"{noiseX} {noiseZ} {angleX} {angleZ}");
-            //transform.Rotate(Vector3.right, angleX);
-            //transform.Rotate(Vector3.forward, angleZ);
+            transform.Rotate(Vector3.right, angleX);
+            transform.Rotate(Vector3.forward, angleZ);
 
             //transform.rotation = Quaternion.Euler(angleX * minMaxRotInDegrees.y, transform.rotation.y, angleZ * minMaxRotInDegrees.y);
         }
