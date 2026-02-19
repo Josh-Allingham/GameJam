@@ -53,7 +53,7 @@ namespace SOG.CVDFilter
 
             if (guid.Length > 1)
             {
-                Debug.LogWarningFormat("[{0}] ({1}): Warning - Multiple {2} found. \"{3}\" has been loaded.", GetType().Name, MethodBase.GetCurrentMethod().Name, soSearchTerm, profiles.name);
+                //Debug.LogWarningFormat("[{0}] ({1}): Warning - Multiple {2} found. \"{3}\" has been loaded.", GetType().Name, MethodBase.GetCurrentMethod().Name, soSearchTerm, profiles.name);
             }
 #endif
         }
