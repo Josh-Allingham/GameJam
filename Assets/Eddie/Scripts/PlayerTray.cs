@@ -5,6 +5,7 @@ public class PlayerTray : MonoBehaviour
     public List<Table> allTables = new List<Table>();
     public List<DishObject> dishesToDeliver = new List<DishObject>();
     private DishObject currentDish;
+    [SerializeField] public DishObject dishPrefab;
     [SerializeField] private float tableDistance = 5f;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -47,14 +48,20 @@ public class PlayerTray : MonoBehaviour
 
             if (dish.tableIndex == tableIndex)
             {
+                //get dish location
+                Vector3 dishLocation = allTables[tableIndex].dishPositions[dish.plateIndex];
 
                 //place corresponding dish
-                dish.GetPlaced();
-                dish.transform.position = allTables[tableIndex].dishPositions[dish.plateIndex];
+                dish.GetPlacedAt(dishLocation);
                 
                 //remove 
                 dishesToDeliver.Remove(dish);
                 //allTables[tableIndex].wantedDishes.Remove(dish);
+
+                DishObject newDish = DishObject.CreateNewDish("New Dish", Random.Range(1,7), Random.Range(1,3));
+
+                DishObject newInstance = Instantiate(dishPrefab, DishObject.dishSpawnPos, Quaternion.identity);
+                newInstance = newDish;
             }
         }
     }
