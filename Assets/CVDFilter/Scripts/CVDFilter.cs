@@ -12,22 +12,22 @@ namespace SOG.CVDFilter
     {
         Volume postProcessVolume;
 
-        CVDProfilesSO profiles;
+        public CVDProfilesSO profiles;
         [SerializeField] VisionTypeNames currentType;
-        public VisionTypeInfo SelectedVisionType { get; private set; }
+        public VisionTypeInfo SelectedVisionType { get; set; }
 
-        const string soFileName = "CVDProfiles";
+        const string soSearchTerm = "CVDProfiles";
 
         void Reset()
         {
             Setup();
-            ChangeProfile();
+            ChangeProfile(0);
         }
 
         void Start()
         {
             Setup();
-            ChangeProfile();
+            ChangeProfile(0);
         }
 
 
@@ -40,11 +40,11 @@ namespace SOG.CVDFilter
         void AssignProfileSO()
         {
 #if UNITY_EDITOR
-            string[] guid = AssetDatabase.FindAssets(soFileName);
+            string[] guid = AssetDatabase.FindAssets(soSearchTerm);
             if (guid.Length < 1)
             {
                 Debug.LogErrorFormat("[{0}] ({1}): Error - Unable to locate file \"{2}\". "
-                + "There should be a single ScriptableObject called \"{2}.asset\" in CVDFilter > Scripts", GetType().Name, MethodBase.GetCurrentMethod().Name, soFileName);
+                + "There should be a single ScriptableObject called \"{2}.asset\" in CVDFilter > Scripts", GetType().Name, MethodBase.GetCurrentMethod().Name, soSearchTerm);
                 return;
             }
 
@@ -53,7 +53,7 @@ namespace SOG.CVDFilter
 
             if (guid.Length > 1)
             {
-                Debug.LogWarningFormat("[{0}] ({1}): Warning - Multiple {2} found. \"{3}\" has been loaded.", GetType().Name, MethodBase.GetCurrentMethod().Name, soFileName, profiles.name);
+                Debug.LogWarningFormat("[{0}] ({1}): Warning - Multiple {2} found. \"{3}\" has been loaded.", GetType().Name, MethodBase.GetCurrentMethod().Name, soSearchTerm, profiles.name);
             }
 #endif
         }
@@ -64,15 +64,15 @@ namespace SOG.CVDFilter
             postProcessVolume.isGlobal = true;
         }
 
-        public void ChangeProfile()
+        public void ChangeProfile(int newFilter)
         {
             if (profiles == null)
             {
-                Debug.LogErrorFormat("[{0}] ({1}): Error - Unable to locate {2}.", GetType().Name, MethodBase.GetCurrentMethod().Name, soFileName);
+                Debug.LogErrorFormat("[{0}] ({1}): Error - Unable to locate {2}.", GetType().Name, MethodBase.GetCurrentMethod().Name, soSearchTerm);
                 return;
             }
 
-            SelectedVisionType = profiles.VisionTypes[(int)currentType];
+            SelectedVisionType = profiles.VisionTypes[newFilter];
             postProcessVolume.profile = SelectedVisionType.profile;
             return;
         }

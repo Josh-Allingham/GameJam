@@ -1466,10 +1466,10 @@ MonoBehaviour:
   m_FillRect: {fileID: 2788585223242962683}
   m_HandleRect: {fileID: 9112734616309712264}
   m_Direction: 0
-  m_MinValue: 0
+  m_MinValue: 0.0001
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 0.0001
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -1565,6 +1565,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e02921ad3f66f6f4da3ffb967d68c0a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  previousMenu: {fileID: 0}
+  settingsMenu: {fileID: 3770521298137464172}
+  masterVolSlider: {fileID: 9152039177759872713}
+  musicVolSlider: {fileID: 795041349485919825}
+  sfxVolSlider: {fileID: 6565839796074147752}
+  colFilter: {fileID: 6170957805404200353}
 --- !u!1 &4072270630813403730
 GameObject:
   m_ObjectHideFlags: 0
@@ -1941,10 +1947,10 @@ MonoBehaviour:
   m_FillRect: {fileID: 4557057836614056958}
   m_HandleRect: {fileID: 6193575176776166475}
   m_Direction: 0
-  m_MinValue: 0
+  m_MinValue: 0.0001
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 0.0001
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -2387,7 +2393,7 @@ GameObject:
   - component: {fileID: 2510645987592494770}
   - component: {fileID: 6170957805404200353}
   m_Layer: 5
-  m_Name: Dropdown
+  m_Name: ColourFilter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3251,10 +3257,10 @@ MonoBehaviour:
   m_FillRect: {fileID: 6450719344643921499}
   m_HandleRect: {fileID: 4686363791658375652}
   m_Direction: 0
-  m_MinValue: 0
+  m_MinValue: 0.0001
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 0.0001
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -3615,7 +3621,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8351583124583387940}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1932900847519894153}
+        m_TargetAssemblyTypeName: SettingsMenu, Assembly-CSharp
+        m_MethodName: saveSettings
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &7462817638367083854
 GameObject:
   m_ObjectHideFlags: 0

@@ -49,7 +49,7 @@ namespace SOG.CVDFilter
 
             visionTypeEnum.RegisterValueChangedCallback((e) =>
             {
-                cvdFilter.ChangeProfile();
+                cvdFilter.ChangeProfile(0);
                 previewImage.style.backgroundImage = cvdFilter.SelectedVisionType.previewImage;
                 descriptionLabel.text = cvdFilter.SelectedVisionType.description;
             });
