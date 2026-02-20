@@ -50,7 +50,7 @@ public class Customer : MonoBehaviour
 
             //request dish
             DishObject newInstance = Instantiate(PlayerTray.main.dishPrefab, DishObject.dishSpawnPos, Quaternion.identity);
-            newInstance.ImportSettings("New Dish", table, 1);
+            newInstance.ImportSettings("New Dish", table + 1, 1);
             hasOrdered = true;
             //get dish
 
@@ -60,19 +60,8 @@ public class Customer : MonoBehaviour
         else if (hasFood)
         {
             Debug.Log("HAS FOOD");
-            StartCoroutine("EatDishAndLeave");
-        }
-
-        if (hasEaten)
-        {
-            Destroy(this);
-        }
+            CustomerManager.main.ClearTable(table);
         //leave
     }
 
-    private IEnumerator EatDishAndLeave()
-    {
-        yield return new WaitForSeconds(10);
-        hasEaten = true;
-    }
 }

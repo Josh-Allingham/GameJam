@@ -46,9 +46,13 @@ public class CustomerManager : MonoBehaviour
             }
         }
 
+        if (customerList != null)
+        {
+
+        
         foreach (GameObject obj in customerList)
         {
-            Customer customer = obj.GetComponent<Customer>();
+            obj.TryGetComponent(out Customer customer);
             if (!customer.isSeated)
             {
                 WalkForwards(customer);
@@ -61,8 +65,8 @@ public class CustomerManager : MonoBehaviour
                 
             }
         }
+        }
 
-        
     }
 
     void SpawnNPCs(int tableIndex)
@@ -110,7 +114,7 @@ public class CustomerManager : MonoBehaviour
             Customer cust = obj.GetComponent<Customer>();
             if (cust.table == tableIndex)
             {
-                Destroy(cust);
+                Destroy(cust.gameObject);
             }
         }
     }
