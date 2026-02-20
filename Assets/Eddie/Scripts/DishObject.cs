@@ -37,7 +37,7 @@ public class DishObject : MonoBehaviour
     {
         if (isPickedUp && followTarget != null)
         {
-            transform.position = followTarget.position + Vector3.up * (1 + followTarget.GetComponent<PlayerTray>().dishesToDeliver.Count);
+            transform.position = followTarget.position;
         }
         
     }

@@ -9,6 +9,9 @@ public class PlayerTray : MonoBehaviour
     private DishObject currentDish;
     [SerializeField] public DishObject dishPrefab;
     [SerializeField] private float tableDistance = 5f;
+
+    public Transform leftAnchor;
+    public Transform rightAnchor;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -71,7 +74,7 @@ public class PlayerTray : MonoBehaviour
     void PickUpDish(DishObject dish)
     {
         dishesToDeliver.Add(dish);
-        dish.GetPickedUp(transform);       
+        dish.GetPickedUp(Random.value < 0.5 ? leftAnchor : rightAnchor);       
     }
     private void OnTriggerEnter(Collider other)
     {

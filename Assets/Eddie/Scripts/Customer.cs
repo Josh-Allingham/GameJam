@@ -60,7 +60,12 @@ public class Customer : MonoBehaviour
         else if (hasFood)
         {
             Debug.Log("HAS FOOD");
-            StartCoroutine("EatDishAndLeave");
+
+            //LEAVE
+            //ADD TIME
+            //KILL CUSTOMER
+
+            CustomerManager.main.ClearTable(table);
         }
 
         if (hasEaten)
@@ -70,9 +75,5 @@ public class Customer : MonoBehaviour
         //leave
     }
 
-    private IEnumerator EatDishAndLeave()
-    {
-        yield return new WaitForSeconds(10);
-        hasEaten = true;
-    }
+ 
 }

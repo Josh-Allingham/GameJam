@@ -46,22 +46,33 @@ public class CustomerManager : MonoBehaviour
             }
         }
 
-        foreach (GameObject obj in customerList)
+        if (customerList != null)
         {
-            Customer customer = obj.GetComponent<Customer>();
-            if (!customer.isSeated)
+            foreach (GameObject obj in customerList)
             {
-                WalkForwards(customer);
-            }
-            else
-            {
-                customer.transform.position = new Vector3(tableSeatLocations[customer.table].x, tableSeatLocations[customer.table].y, tableSeatLocations[customer.table].z);
-                customer.transform.localEulerAngles = new Vector3(0, tableSeatLocations[customer.table].w, 0);
 
-                
+                obj.TryGetComponent(out Customer customer);
+
+                if (customer != null)
+                {
+
+                    if (!customer.isSeated)
+                    {
+                        WalkForwards(customer);
+                    }
+                    else
+                    {
+                        customer.transform.position = new Vector3(tableSeatLocations[customer.table].x, tableSeatLocations[customer.table].y, tableSeatLocations[customer.table].z);
+                        customer.transform.localEulerAngles = new Vector3(0, tableSeatLocations[customer.table].w, 0);
+
+
+                    }
+
+
+                }
             }
+
         }
-
         
     }
 
@@ -99,6 +110,7 @@ public class CustomerManager : MonoBehaviour
             if (cust.table == tableIndex)
             {
                 cust.hasFood = true;
+                
             }
         }
     }
@@ -110,7 +122,7 @@ public class CustomerManager : MonoBehaviour
             Customer cust = obj.GetComponent<Customer>();
             if (cust.table == tableIndex)
             {
-                Destroy(cust);
+                Destroy(cust.gameObject);
             }
         }
     }
