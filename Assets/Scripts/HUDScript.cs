@@ -33,7 +33,7 @@ public class HUDScript : MonoBehaviour
 
     public void updateAnger()
     {
-        angerLvl += Time.deltaTime * 0.01f;
+        angerLvl += Time.deltaTime * 0.05f;
     }
 
     public void updateJar()
@@ -47,18 +47,20 @@ public class HUDScript : MonoBehaviour
     public void tableServed()
     {
         moneyValue += 15;
+        angerLvl = 0f; 
     }
 
     public void platesDropped()
     {
         moneyValue -= 5;
-        angerLvl += 10f;
+        angerLvl += 0.1f;
     }
 
     public void checkAnger()
     {
-        if(angerLvl >= 100f)
+        if(angerLvl >= 1f)
         {
+            GlobalSettings.score = moneyValue;
             SceneManager.LoadScene("GameOver");
         }
     }

@@ -6,5 +6,7 @@ public class GlobalSettings : MonoBehaviour
     public static float MusicVolume;
     public static float SFXVolume;
 
+    public static int score;
+
     public static int ColFilter;
 }
