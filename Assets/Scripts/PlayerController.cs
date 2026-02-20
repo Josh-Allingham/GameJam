@@ -16,11 +16,13 @@ public class PlayerControler : MonoBehaviour
     private Quaternion freeRotation;
     private Vector3 targetDir;
 
+    private Animator animator;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         charController = GetComponent<CharacterController>();
+        animator = GetComponentInChildren<Animator>();
 
         //Lock Cursor
         Cursor.lockState = CursorLockMode.Locked;
@@ -28,7 +30,7 @@ public class PlayerControler : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         bool isRunning = false;
         isRunning = Input.GetKey(KeyCode.LeftShift);
@@ -73,11 +75,17 @@ public class PlayerControler : MonoBehaviour
             }
             var euler = new Vector3(0, eulerY, 0);
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(euler), turnSpeed * Time.deltaTime);
+            animator.SetBool("IsWalking", true);
+        }
+        else
+        {
+            animator.SetBool("IsWalking", false);
         }
 
-        if(mInput != Vector2.zero)
+        if (mInput != Vector2.zero)
         {
-            charController.Move(moveDir * Time.deltaTime);
+            charController.SimpleMove(moveDir);
+
         }
 
     }
