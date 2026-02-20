@@ -6664,7 +6664,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hasFallen: 0
-  balancePointer: {fileID: 0}
+  balancePointer: {fileID: 71323797}
   clickScale: 1.2
   noiseMultiplier: 1
 --- !u!114 &676521281
@@ -6680,8 +6680,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dishesToDeliver: []
-  dishPrefab: {fileID: 0}
+  dishPrefab: {fileID: 3547408012472792393, guid: 8a379f1f733ff894c847cb3f1d9f86ec, type: 3}
   tableDistance: 5
+  leftAnchor: {fileID: 2082251405}
+  rightAnchor: {fileID: 1510322668}
 --- !u!1001 &683644690
 PrefabInstance:
   m_ObjectHideFlags: 0

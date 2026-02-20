@@ -41,7 +41,7 @@ public class Customer : MonoBehaviour
                 walkTimer = 2f;
                 isSeated = true;
                 transform.position = new Vector3(seatPosition.x, seatPosition.y, seatPosition.z);
-                transform.localEulerAngles = new Vector3(0,seatPosition.w,0);
+                transform.localEulerAngles = new Vector3(0, seatPosition.w, 0);
             }
         }
         else if (!hasOrdered)
@@ -54,14 +54,15 @@ public class Customer : MonoBehaviour
             hasOrdered = true;
             //get dish
 
-            
+
         }
         //eat dish
         else if (hasFood)
         {
             Debug.Log("HAS FOOD");
             CustomerManager.main.ClearTable(table);
-        //leave
-    }
+            //leave
+        }
 
+    }
 }
