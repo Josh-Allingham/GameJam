@@ -942,8 +942,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 39.4}
-  m_SizeDelta: {x: 1920, y: 1080}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 1920, y: 1469.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &71323799
 MonoBehaviour:
@@ -4110,6 +4110,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Curtain and Rod 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2918007343489752822, guid: ad5785469ad3ac043a0018b60a8fcd4b, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 1635d3a722f00964a8d8f3cad24b1fbd, type: 2}
+    - target: {fileID: 7717771549180763804, guid: ad5785469ad3ac043a0018b60a8fcd4b, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 1635d3a722f00964a8d8f3cad24b1fbd, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4430,6 +4438,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Curtain and Rod 1 (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 2918007343489752822, guid: ad5785469ad3ac043a0018b60a8fcd4b, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 1635d3a722f00964a8d8f3cad24b1fbd, type: 2}
+    - target: {fileID: 7717771549180763804, guid: ad5785469ad3ac043a0018b60a8fcd4b, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 1635d3a722f00964a8d8f3cad24b1fbd, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6766,6 +6782,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Curtain and Rod 1 (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 2918007343489752822, guid: ad5785469ad3ac043a0018b60a8fcd4b, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 1635d3a722f00964a8d8f3cad24b1fbd, type: 2}
+    - target: {fileID: 7717771549180763804, guid: ad5785469ad3ac043a0018b60a8fcd4b, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 1635d3a722f00964a8d8f3cad24b1fbd, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9566,6 +9590,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Curtain and Rod 1 (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 2918007343489752822, guid: ad5785469ad3ac043a0018b60a8fcd4b, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 1635d3a722f00964a8d8f3cad24b1fbd, type: 2}
+    - target: {fileID: 7717771549180763804, guid: ad5785469ad3ac043a0018b60a8fcd4b, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 1635d3a722f00964a8d8f3cad24b1fbd, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -11523,6 +11555,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Curtain and Rod 1 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 2918007343489752822, guid: ad5785469ad3ac043a0018b60a8fcd4b, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 1635d3a722f00964a8d8f3cad24b1fbd, type: 2}
+    - target: {fileID: 7717771549180763804, guid: ad5785469ad3ac043a0018b60a8fcd4b, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 1635d3a722f00964a8d8f3cad24b1fbd, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -15443,6 +15483,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Curtain and Rod 1 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 2918007343489752822, guid: ad5785469ad3ac043a0018b60a8fcd4b, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 1635d3a722f00964a8d8f3cad24b1fbd, type: 2}
+    - target: {fileID: 7717771549180763804, guid: ad5785469ad3ac043a0018b60a8fcd4b, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 1635d3a722f00964a8d8f3cad24b1fbd, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -16952,6 +17000,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Curtain and Rod 1 (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 2918007343489752822, guid: ad5785469ad3ac043a0018b60a8fcd4b, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 1635d3a722f00964a8d8f3cad24b1fbd, type: 2}
+    - target: {fileID: 7717771549180763804, guid: ad5785469ad3ac043a0018b60a8fcd4b, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 1635d3a722f00964a8d8f3cad24b1fbd, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -17578,6 +17634,75 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1462062954409949942, guid: ffee4eaccc5b21b42b86ab4f369b6eb3, type: 3}
   m_PrefabInstance: {fileID: 2116914154}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &2131733464
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 0dfcf5368651f514cbe7b0d0b52815bd, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0dfcf5368651f514cbe7b0d0b52815bd, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0dfcf5368651f514cbe7b0d0b52815bd, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0dfcf5368651f514cbe7b0d0b52815bd, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -15.75
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0dfcf5368651f514cbe7b0d0b52815bd, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.05
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0dfcf5368651f514cbe7b0d0b52815bd, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -18.62
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0dfcf5368651f514cbe7b0d0b52815bd, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0dfcf5368651f514cbe7b0d0b52815bd, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0dfcf5368651f514cbe7b0d0b52815bd, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0dfcf5368651f514cbe7b0d0b52815bd, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0dfcf5368651f514cbe7b0d0b52815bd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0dfcf5368651f514cbe7b0d0b52815bd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 0dfcf5368651f514cbe7b0d0b52815bd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 0dfcf5368651f514cbe7b0d0b52815bd, type: 3}
+      propertyPath: m_Name
+      value: NPC_female_sit
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0dfcf5368651f514cbe7b0d0b52815bd, type: 3}
 --- !u!4 &154050392133744105
 Transform:
   m_ObjectHideFlags: 0
@@ -17912,3 +18037,4 @@ SceneRoots:
   - {fileID: 2584003650715096331}
   - {fileID: 1908046632}
   - {fileID: 531525529}
+  - {fileID: 2131733464}
