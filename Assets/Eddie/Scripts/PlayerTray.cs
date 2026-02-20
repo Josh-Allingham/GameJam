@@ -19,7 +19,15 @@ public class PlayerTray : MonoBehaviour
         allTables.Add(new Table(0, null, new Vector3[] { new Vector3(16.41f, 3.52f, -0.16f), new Vector3(16.16f, 3.52f, -1.79f) }, new Vector3(15.6f, 3.65f, -0.37f)));
         allTables.Add(new Table(1, null, new Vector3[] { new Vector3(7.33f, 3.52f, -5.29f), new Vector3(7.33f, 3.52f, -7.74f), new Vector3(8.48f, 3.52f, -6.27f) }, new Vector3(7.13f, 3.65f, -6.37f)));
         allTables.Add(new Table(2, null, new Vector3[] { new Vector3(16.22f, 3.52f, -12.22f), new Vector3(16.87f, 3.52f, -13.94f), new Vector3(15.24f, 3.52f, -14.65f) }, new Vector3(15.88f, 3.65f, -13.49f)));
-        allTables.Add(new Table(3, null, new Vector3[] { new Vector3(-15.84f, 3.52f, -16.63f), new Vector3(-15.84f, 3.52f, -14.18f) }, new Vector3(-15.87f, 3.65f, -15.2f)));
+        allTables.Add(new Table(3, null, new Vector3[] { new Vector3(-15.84f, 3.52f, -1
+            
+            
+            
+            
+            
+            
+            
+            6.63f), new Vector3(-15.84f, 3.52f, -14.18f) }, new Vector3(-15.87f, 3.65f, -15.2f)));
         allTables.Add(new Table(4, null, new Vector3[] { new Vector3(-11.89f, 3.52f, -7.18f), new Vector3(-11.89f, 3.52f, -4.66f), new Vector3(-10.64f, 3.52f, -6.178f), new Vector3(-13.27f, 3.52f, -6.178f) }, new Vector3(-11.82f, 3.65f, -6.09f)));
         allTables.Add(new Table(5, null, new Vector3[] { new Vector3(-15.81f, 3.52f, 3.46f), new Vector3(-15.81f, 3.52f, 5.97f) }, new Vector3(-15.98f, 3.65f, 4.72f)));
         #endregion

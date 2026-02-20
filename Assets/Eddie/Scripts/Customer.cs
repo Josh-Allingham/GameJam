@@ -50,7 +50,7 @@ public class Customer : MonoBehaviour
 
             //request dish
             DishObject newInstance = Instantiate(PlayerTray.main.dishPrefab, DishObject.dishSpawnPos, Quaternion.identity);
-            newInstance.ImportSettings("New Dish", table, 1);
+            newInstance.ImportSettings("New Dish", table + 1, 1);
             hasOrdered = true;
             //get dish
 
