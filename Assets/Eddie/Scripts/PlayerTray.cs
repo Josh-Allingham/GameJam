@@ -2,6 +2,8 @@ using UnityEngine;
 using System.Collections.Generic;
 public class PlayerTray : MonoBehaviour
 {
+    public static PlayerTray main;
+
     public List<Table> allTables = new List<Table>();
     public List<DishObject> dishesToDeliver = new List<DishObject>();
     private DishObject currentDish;
@@ -19,6 +21,7 @@ public class PlayerTray : MonoBehaviour
         allTables.Add(new Table(5, null, new Vector3[] { new Vector3(-15.81f, 3.52f, 3.46f), new Vector3(-15.81f, 3.52f, 5.97f) }, new Vector3(-15.98f, 3.65f, 4.72f)));
         #endregion
 
+        main = this;
     }
 
     // Update is called once per frame
@@ -53,15 +56,14 @@ public class PlayerTray : MonoBehaviour
 
                 //place corresponding dish
                 dish.GetPlacedAt(dishLocation);
-                
                 //remove 
                 dishesToDeliver.Remove(dish);
                 //allTables[tableIndex].wantedDishes.Remove(dish);
 
-                DishObject newDish = DishObject.CreateNewDish("New Dish", Random.Range(1,7), Random.Range(1,3));
+                CustomerManager.main.GiveFood(tableIndex);
 
-                DishObject newInstance = Instantiate(dishPrefab, DishObject.dishSpawnPos, Quaternion.identity);
-                newInstance = newDish;
+
+
             }
         }
     }
@@ -87,6 +89,7 @@ public class PlayerTray : MonoBehaviour
         public Vector3[] dishPositions;
         public int dishSlots;
         public Vector3 tablePosition;
+        public bool hasFood;
 
         public Table(int tableIndex, List<DishObject> wantedDishes, Vector3[] dishPositions, Vector3 tablePosition)
         {
@@ -95,6 +98,7 @@ public class PlayerTray : MonoBehaviour
             this.dishPositions = dishPositions;
             this.tablePosition = tablePosition;
             this.dishSlots = dishPositions.Length;
+            this.hasFood = false;
         }
 
         public DishObject GetDish(int dishIndex)

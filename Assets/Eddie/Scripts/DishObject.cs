@@ -18,10 +18,11 @@ public class DishObject : MonoBehaviour
         this.name = name;
     }
 
-    public static DishObject CreateNewDish(string _name, int _tableNumber, int _seatNumber)
+    public void ImportSettings(string _name, int _tableNumber, int _seatNumber)
     {
-        DishObject newDish = new DishObject(_tableNumber - 1, _seatNumber - 1, _name);
-        return newDish;
+        this.name = _name;
+        this.tableIndex = _tableNumber - 1;
+        this.plateIndex = _seatNumber - 1;
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created

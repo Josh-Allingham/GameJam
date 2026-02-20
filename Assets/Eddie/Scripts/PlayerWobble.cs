@@ -51,7 +51,7 @@ public class PlayerWobble : MonoBehaviour
 
     }
 
-    bool CheckIfFallen()
+    public bool CheckIfFallen()
     {
         return !(balancePointer.transform.localEulerAngles.z <= minMaxRotInDegrees.y || balancePointer.transform.localEulerAngles.z >= 360 + minMaxRotInDegrees.x);
         

@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8213148748808678221}
+  - component: {fileID: -1364228579991983777}
   m_Layer: 0
   m_Name: NPC_Masc_1
   m_TagString: Untagged
@@ -32,6 +33,23 @@ Transform:
   - {fileID: 8706648592712994864}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-1364228579991983777
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1646358554887522994}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40e85040ccbed524c871c7a54607d406, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  table: 0
+  seatPosition: {x: 0, y: 0, z: 0, w: 0}
+  isSeated: 0
+  instance: {fileID: 0}
+  hasEaten: 0
 --- !u!1001 &9177917945218430939
 PrefabInstance:
   m_ObjectHideFlags: 0
