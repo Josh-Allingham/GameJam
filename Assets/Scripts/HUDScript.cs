@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class HUDScript : MonoBehaviour
 {
+    public static HUDScript main;
+
     [SerializeField]
     public Image bossFace;
     [SerializeField]
@@ -18,7 +20,7 @@ public class HUDScript : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        main = this;    
     }
 
     // Update is called once per frame

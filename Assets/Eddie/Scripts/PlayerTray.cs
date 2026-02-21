@@ -37,36 +37,37 @@ public class PlayerTray : MonoBehaviour
             currentDish = null;
         }
 
+        PlaceDishAtTable();
+    }
+
+    
+    public void PlaceDishAtTable()
+    {
+        int tableIndex = -1;
+
         foreach (Table table in allTables)
         {
             if (Vector3.Distance(transform.position, table.tablePosition) < tableDistance && Input.GetKeyDown(KeyCode.E))
             {
-                PlaceDishAtTable(table.tableIndex);
+                tableIndex = table.tableIndex;
+                break;
             }
         }
-    }
-
-    void PlaceDishAtTable(int tableIndex)
-    {
         foreach (DishObject dish in dishesToDeliver)
         {
             //check if we have a dish for this table
-
+            
             if (dish.tableIndex == tableIndex)
             {
-                //get dish location
                 Vector3 dishLocation = allTables[tableIndex].dishPositions[dish.plateIndex];
 
-                //place corresponding dish
                 dish.GetPlacedAt(dishLocation);
-                //remove 
+
                 dishesToDeliver.Remove(dish);
-                //allTables[tableIndex].wantedDishes.Remove(dish);
 
                 CustomerManager.main.GiveFood(tableIndex);
 
-
-
+                break;
             }
         }
     }
