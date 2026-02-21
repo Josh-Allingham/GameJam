@@ -48,8 +48,11 @@ MonoBehaviour:
   table: 0
   seatPosition: {x: 0, y: 0, z: 0, w: 0}
   isSeated: 0
-  instance: {fileID: 0}
+  hasOrdered: 0
   hasEaten: 0
+  hasFood: 0
+  spawnPoint: {x: -0.25, y: 2, z: -20}
+  walkTimerResetValue: 10
 --- !u!1001 &6448513008870501165
 PrefabInstance:
   m_ObjectHideFlags: 0

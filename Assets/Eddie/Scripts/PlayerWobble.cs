@@ -20,7 +20,6 @@ public class PlayerWobble : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(balancePointer.transform.localEulerAngles + " " + CheckIfFalling() + " " + CheckIfFallen());
 
         if (CheckIfFalling())
         {
@@ -37,18 +36,13 @@ public class PlayerWobble : MonoBehaviour
         {
             float noiseZ = Mathf.PerlinNoise(Time.time, balancePointer.transform.localEulerAngles.z);
 
-            float sinZ = Mathf.Sin(noiseZ * 2 * Mathf.PI);
+            float adjustedNoise = noiseZ * 2 - 1;
 
             float clickMultiplier = 1;
             clickMultiplier *= Input.GetMouseButton(0) ? clickScale : 1;
             clickMultiplier *= Input.GetMouseButton(1) ? -clickScale : 1;
 
-            //Vector3 newRot = new Vector3(0, 0, angleX * minMaxRotInDegrees.y);
-
-            Vector3 newRot = balancePointer.transform.localEulerAngles + Vector3.forward * sinZ * clickMultiplier;
-            //Debug.Log(balancePointer.transform.localEulerAngles + " " + newRot);
-            //balancePointer.transform.localEulerAngles = newRot;
-            balancePointer.transform.localEulerAngles += Vector3.forward * sinZ * noiseMultiplier * Time.deltaTime;
+            balancePointer.transform.localEulerAngles += Vector3.forward * adjustedNoise * noiseMultiplier * Time.deltaTime;
             balancePointer.transform.localEulerAngles += Vector3.forward * clickMultiplier * Time.deltaTime;
             
         }
@@ -59,6 +53,7 @@ public class PlayerWobble : MonoBehaviour
 
     IEnumerator FallenOver()
     {
+        GetComponent<PlayerControler>().canMove = false;
         yield return new WaitForSeconds(2f);
         SceneManager.LoadScene("GameOver");
     }

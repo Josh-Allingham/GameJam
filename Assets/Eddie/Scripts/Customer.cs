@@ -10,12 +10,20 @@ public class Customer : MonoBehaviour
     public bool hasEaten;
     public bool hasFood;
     public Vector3 spawnPoint = new Vector3(-0.25f, 2f, -20f);
-    private float walkTimer = 2f;
+    [SerializeField] private float walkTimerResetValue = 2f;
+    private float walkTimer;
+    [SerializeField] private float walkSpeed = 2f;
+    
 
-    public Customer(int table, Vector3 seatPosition)
+    public void SetCustomerValues(int table, Vector3 seatPosition, bool isSeated = false, bool hasOrdered = false, bool hasEaten = false, bool hasFood = false)
     {
         this.table = table;
         this.seatPosition = seatPosition;
+        this.isSeated = isSeated;
+        this.hasOrdered = hasOrdered;
+        this.hasEaten = hasEaten;
+        this.hasFood = hasFood;
+        this.walkTimer = walkTimerResetValue;
         transform.position = spawnPoint;
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -26,19 +34,22 @@ public class Customer : MonoBehaviour
         isSeated = false;
         hasFood = false;
         hasOrdered = false;
+        walkTimer = walkTimerResetValue;
 
     }
 
     // Update is called once per frame
     void Update()
     {
+     
         if (!isSeated)
         {
             walkTimer -= Time.deltaTime;
-            transform.position += Vector3.forward;
+            transform.position += Vector3.forward * walkSpeed * Time.deltaTime;
             if (walkTimer < 0)
             {
-                walkTimer = 2f;
+                //Sit down!
+                walkTimer = walkTimerResetValue;
                 isSeated = true;
                 transform.position = new Vector3(seatPosition.x, seatPosition.y, seatPosition.z);
                 transform.localEulerAngles = new Vector3(0, seatPosition.w, 0);

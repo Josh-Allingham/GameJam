@@ -65,7 +65,7 @@ public class CustomerManager : MonoBehaviour
             {
                 if (obj != null && obj.TryGetComponent(out Customer customer))
                 {
-                    if (!customer.isSeated)
+                    if (customer.isSeated)
                     {
                         //Sit them in the chair
                         customer.transform.position = new Vector3(tableSeatLocations[customer.table].x, tableSeatLocations[customer.table].y, tableSeatLocations[customer.table].z);
@@ -92,9 +92,8 @@ public class CustomerManager : MonoBehaviour
         int numNPCs = 1;
         for (int i = 0; i < numNPCs; i++)
         {
-            GameObject newCustomer = Instantiate(NPCPrefabs[Random.Range(0, NPCPrefabs.Length)], new Vector3(-0.25f, 2f, -20f), Quaternion.identity);
-            newCustomer.GetComponent<Customer>().table = tableIndex;
-            newCustomer.GetComponent<Customer>().seatPosition = tableSeatLocations[tableIndex];
+            GameObject newCustomer = Instantiate(NPCPrefabs[Random.Range(0, NPCPrefabs.Length)]);
+            newCustomer.GetComponent<Customer>().SetCustomerValues(tableIndex, tableSeatLocations[tableIndex]);
             customerList.Add(newCustomer);
         }
 

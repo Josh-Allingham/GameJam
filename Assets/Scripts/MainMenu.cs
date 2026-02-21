@@ -13,6 +13,8 @@ public class MainMenu : MonoBehaviour
     void Start()
     {
         mainMenuUI.SetActive(true);
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 
     // Update is called once per frame
