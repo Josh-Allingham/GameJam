@@ -39,7 +39,6 @@ public class DishObject : MonoBehaviour
         {
             transform.position = followTarget.position;
         }
-        
     }
 
     public void GetPickedUp(Transform player)

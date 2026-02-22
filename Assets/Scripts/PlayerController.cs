@@ -10,7 +10,7 @@ public class PlayerControler : MonoBehaviour
     CharacterController charController;
     Vector3 moveDir = Vector3.zero;
 
-    bool canMove = true;
+    public bool canMove = true;
 
     private Vector2 mInput;
     private Quaternion freeRotation;

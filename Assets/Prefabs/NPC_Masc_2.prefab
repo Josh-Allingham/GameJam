@@ -48,8 +48,12 @@ MonoBehaviour:
   table: 0
   seatPosition: {x: 0, y: 0, z: 0, w: 0}
   isSeated: 0
-  instance: {fileID: 0}
+  hasOrdered: 0
   hasEaten: 0
+  hasFood: 0
+  spawnPoint: {x: -0.25, y: 2, z: -20}
+  walkTimerResetValue: 10
+  walkSpeed: 2
 --- !u!1001 &4224496431404539453
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -64,11 +68,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d3fea3bb6a5281a4cb57b92ee04b1650, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.78
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d3fea3bb6a5281a4cb57b92ee04b1650, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -12.28
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d3fea3bb6a5281a4cb57b92ee04b1650, type: 3}
       propertyPath: m_LocalRotation.w
