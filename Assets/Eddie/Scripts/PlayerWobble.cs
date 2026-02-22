@@ -21,36 +21,44 @@ public class PlayerWobble : MonoBehaviour
     void Update()
     {
 
-        if (CheckIfFalling())
+        switch (CheckIfFalling())
         {
-            anim.SetBool("Falling", true);
-            anim.SetBool("Stable", false);
+            case true:
+                anim.SetBool("Falling", true);
+                anim.SetBool("Stable", false);
+                break;
+            case false:
+                anim.SetBool("Stable", true);
+                anim.SetBool("Falling", false);
+                break;
         }
-        if (CheckIfFallen())
+        switch (CheckIfFallen())
         {
-            anim.SetBool("Fallen", true);
-            anim.SetBool("Falling", false);
-            StartCoroutine("FallenOver");
+            case true:
+                anim.SetBool("Fallen", true);
+                anim.SetBool("Falling", false);
+                StartCoroutine("FallenOver");
+                break;
+            case false:
+                MovePointer();
+                break;
         }
-        if (!CheckIfFallen())
-        {
-            float noiseZ = Mathf.PerlinNoise(Time.time, balancePointer.transform.localEulerAngles.z);
-
-            float adjustedNoise = noiseZ * 2 - 1;
-
-            float clickMultiplier = 1;
-            clickMultiplier *= Input.GetMouseButton(0) ? clickScale : 1;
-            clickMultiplier *= Input.GetMouseButton(1) ? -clickScale : 1;
-
-            balancePointer.transform.localEulerAngles += Vector3.forward * adjustedNoise * noiseMultiplier * Time.deltaTime;
-            balancePointer.transform.localEulerAngles += Vector3.forward * clickMultiplier * Time.deltaTime;
-            
-        }
-        
-
 
     }
 
+    void MovePointer() 
+    {
+        float noiseZ = Mathf.PerlinNoise(Time.time, balancePointer.transform.localEulerAngles.z);
+
+        float adjustedNoise = noiseZ * 2 - 1;
+
+        float clickMultiplier = 1;
+        clickMultiplier *= Input.GetMouseButton(0) ? clickScale : 1;
+        clickMultiplier *= Input.GetMouseButton(1) ? -clickScale : 1;
+
+        balancePointer.transform.localEulerAngles += Vector3.forward * adjustedNoise * noiseMultiplier * Time.deltaTime;
+        balancePointer.transform.localEulerAngles += Vector3.forward * clickMultiplier * Time.deltaTime;
+    }
     IEnumerator FallenOver()
     {
         GetComponent<PlayerControler>().canMove = false;
@@ -59,7 +67,7 @@ public class PlayerWobble : MonoBehaviour
     }
     bool CheckIfFalling()
     {
-        return !(balancePointer.transform.localEulerAngles.z <= minMaxRotInDegrees.y/2 || balancePointer.transform.localEulerAngles.z >= 360 + minMaxRotInDegrees.x/2);
+        return !(balancePointer.transform.localEulerAngles.z <= 19 || balancePointer.transform.localEulerAngles.z >= 360 - 19);
     }
 
     public bool CheckIfFallen()
