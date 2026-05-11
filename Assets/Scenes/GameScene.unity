@@ -7076,6 +7076,11 @@ MonoBehaviour:
   balancePointer: {fileID: 71323797}
   clickScale: 50
   noiseMultiplier: 200
+  gravityFactor: 8
+  damping: 4
+  inputStrength: 60
+  maxAngularVelocity: 360
+  noiseFrequency: 0.5
 --- !u!114 &676521281
 MonoBehaviour:
   m_ObjectHideFlags: 0
