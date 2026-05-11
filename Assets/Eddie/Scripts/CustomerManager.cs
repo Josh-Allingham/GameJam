@@ -41,13 +41,14 @@ public class CustomerManager : MonoBehaviour
             customerArriveCountdown -= Time.deltaTime;
         }
 
-        //free table
-        if (customerArriveCountdown <= 0f)
-        {
-            //if there is a free table
-            for (int i = 0; i < tableSeatIndex.GetLength(0); i++)
-            { 
-                if (tableSeatIndex[i, 0] != tableSeatIndex[i, 1])
+        
+        //if there is a free table
+        for (int i = 0; i < tableSeatIndex.GetLength(0); i++)
+        { 
+            if (tableSeatIndex[i, 0] != tableSeatIndex[i, 1])
+            {
+                //free table
+                if (customerArriveCountdown <= 0f)
                 {
                     SpawnNPC(i);
                     tableSeatIndex[i, 1] = tableSeatIndex[i, 0];

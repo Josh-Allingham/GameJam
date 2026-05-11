@@ -59,12 +59,14 @@ public class PlayerWobble : MonoBehaviour
         balancePointer.transform.localEulerAngles += Vector3.forward * adjustedNoise * noiseMultiplier * Time.deltaTime;
         balancePointer.transform.localEulerAngles += Vector3.forward * clickMultiplier * Time.deltaTime;
     }
+
     IEnumerator FallenOver()
     {
         GetComponent<PlayerControler>().canMove = false;
         yield return new WaitForSeconds(2f);
         SceneManager.LoadScene("GameOver");
     }
+
     bool CheckIfFalling()
     {
         return !(balancePointer.transform.localEulerAngles.z <= 19 || balancePointer.transform.localEulerAngles.z >= 360 - 19);
