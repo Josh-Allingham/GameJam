@@ -49,7 +49,9 @@ public class HUDScript : MonoBehaviour
     public void tableServed()
     {
         moneyValue += 15;
-        angerLvl = 0f; 
+        angerLvl = 0f;
+        GlobalSettings.score = moneyValue;
+        Debug.Log(GlobalSettings.score);
     }
 
     public void platesDropped()
@@ -62,7 +64,6 @@ public class HUDScript : MonoBehaviour
     {
         if(angerLvl >= 1f)
         {
-            GlobalSettings.score = moneyValue;
             SceneManager.LoadScene("GameOver");
         }
     }
