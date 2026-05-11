@@ -41,22 +41,23 @@ public class CustomerManager : MonoBehaviour
             customerArriveCountdown -= Time.deltaTime;
         }
 
-        //if there is a free table
-        for (int i = 0; i < tableSeatIndex.GetLength(0); i++)
+        //free table
+        if (customerArriveCountdown <= 0f)
         {
-            if (tableSeatIndex[i, 0] != tableSeatIndex[i, 1])
-            {
-                //free table
-                if (customerArriveCountdown <= 0f)
+            //if there is a free table
+            for (int i = 0; i < tableSeatIndex.GetLength(0); i++)
+            { 
+                if (tableSeatIndex[i, 0] != tableSeatIndex[i, 1])
                 {
                     SpawnNPC(i);
                     tableSeatIndex[i, 1] = tableSeatIndex[i, 0];
-                    customerArriveCountdown = 10f;
+                    customerArriveCountdown = 7.5f;
                 }
 
             }
         }
     }
+
     void NPCMovement()
     {
         if (customerList != null)
@@ -83,6 +84,7 @@ public class CustomerManager : MonoBehaviour
     {
         foreach (GameObject cust in customersToDelete)
         {
+            customerList.Remove(cust);
             Destroy(cust);
         }
     }

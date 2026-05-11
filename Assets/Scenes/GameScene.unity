@@ -8987,6 +8987,7 @@ MonoBehaviour:
   bossFace: {fileID: 1726925086}
   moneyJar: {fileID: 1875330221}
   moneyTxt: {fileID: 1927909423}
+  customerManager: {fileID: 1521757472}
 --- !u!1001 &921786728
 PrefabInstance:
   m_ObjectHideFlags: 0

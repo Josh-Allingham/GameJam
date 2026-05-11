@@ -13,6 +13,9 @@ public class HUDScript : MonoBehaviour
     public Image moneyJar;
     [SerializeField]
     public TMP_Text moneyTxt;
+    [SerializeField]
+    public CustomerManager customerManager;
+
 
     float angerLvl = 0f;
     int moneyValue = 0;
@@ -31,11 +34,15 @@ public class HUDScript : MonoBehaviour
         checkAnger();
         bossFace.fillAmount = angerLvl;
         moneyTxt.text = moneyValue.ToString();
+
     }
 
     public void updateAnger()
     {
-        angerLvl += Time.deltaTime * 0.05f;
+        if(customerManager.customerList.Count > 0)
+        {
+            angerLvl += Time.deltaTime * 0.05f;
+        }
     }
 
     public void updateJar()

@@ -5,7 +5,7 @@ public class LocationAdjustScript : StateMachineBehaviour
     //OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        animator.transform.position = new Vector3(animator.transform.position.x, -0.5f, animator.transform.position.z);
+        animator.transform.position = new Vector3(animator.transform.position.x, -0.75f, animator.transform.position.z);
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
