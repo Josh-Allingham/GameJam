@@ -29,7 +29,8 @@ public class GameOver : MonoBehaviour
 
     public void quitGame()
     {
-        Application.Quit();
+        SceneManager.LoadScene("MainMenu");
+        GlobalSettings.score = 0;
     }
 
 }
